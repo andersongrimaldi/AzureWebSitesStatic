@@ -20,9 +20,14 @@ jobs:
           submodules: true
       - name: Debug Action
         uses: hmarr/debug-action@v1.0.0
-      - uses: actions/setup-dotnet@v1
+      - name: Scaricare .NET 5
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.0.x'
+      - name: Scaricare .NET 3
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.x'
       - name: Build App
         run: dotnet publish -c Release -o published
       - name: Build And Deploy
