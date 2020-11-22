@@ -10,11 +10,11 @@ using Newtonsoft.Json;
 
 namespace Soccer.Server
 {
-    public static class Function1
+    public static class Players
     {
-        [FunctionName("Function1")]
+        [FunctionName("Players")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
