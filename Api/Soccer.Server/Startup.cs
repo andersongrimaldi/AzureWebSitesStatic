@@ -15,7 +15,7 @@ namespace Soccer.Server
                 string futDbApiKey = builder.GetContext().Configuration["FutDb-ApiKey"];
                 httpConfig.DefaultRequestHeaders.Add("X-AUTH-TOKEN", futDbApiKey);
             });
-
+            builder.Services.AddMemoryCache();
             builder.Services.AddSingleton<IFutService, FutServices>();
         }
     }

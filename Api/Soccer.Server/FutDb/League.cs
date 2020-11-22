@@ -20,7 +20,7 @@ namespace Soccer.Server.FutDb
         public long ItemsPerPage { get; set; }
 
         [JsonPropertyName("items")]
-        public LeagueItem[] Items { get; set; }
+        public LeagueItem[] LeagueList { get; set; }
     }
 
     public partial class LeagueItem

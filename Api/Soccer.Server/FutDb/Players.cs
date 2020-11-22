@@ -5,7 +5,23 @@ using System.Text.Json.Serialization;
 
 namespace Soccer.Server.FutDb
 {
-    public partial class Players
+    public class PlayersRequest
+    {
+        public int League { get; set; }     
+  //"name": "string",
+  //"rating_min": 0,
+  //"rating_max": 0,
+  //"rating": 0,
+  //"rarity": 0,
+  //"position": "string",
+  //"club": 0,
+  //"league": 0,
+  //"nation": 0,
+  //"weak_foot": 0,
+  //"skill_moves": 0
+    }
+
+    public class Players
     {
         [JsonPropertyName("count")]
         public long Count { get; set; }
@@ -99,14 +115,14 @@ namespace Soccer.Server.FutDb
         [JsonPropertyName("weak_foot")]
         public long WeakFoot { get; set; }
 
-        [JsonPropertyName("foot")]
-        public Foot Foot { get; set; }
+        //[JsonPropertyName("foot")]
+        //public Foot Foot { get; set; }
 
-        [JsonPropertyName("attack_work_rate")]
-        public WorkRate AttackWorkRate { get; set; }
+        //[JsonPropertyName("attack_work_rate")]
+        //public WorkRate AttackWorkRate { get; set; }
 
-        [JsonPropertyName("defense_work_rate")]
-        public WorkRate DefenseWorkRate { get; set; }
+        //[JsonPropertyName("defense_work_rate")]
+        //public WorkRate DefenseWorkRate { get; set; }
 
         [JsonPropertyName("total_stats")]
         public object TotalStats { get; set; }
@@ -138,26 +154,26 @@ namespace Soccer.Server.FutDb
         [JsonPropertyName("physicality")]
         public long Physicality { get; set; }
 
-        [JsonPropertyName("pace_attributes")]
-        public PaceAttributes PaceAttributes { get; set; }
+        //[JsonPropertyName("pace_attributes")]
+        //public PaceAttributes PaceAttributes { get; set; }
 
-        [JsonPropertyName("shooting_attributes")]
-        public ShootingAttributes ShootingAttributes { get; set; }
+        //[JsonPropertyName("shooting_attributes")]
+        //public ShootingAttributes ShootingAttributes { get; set; }
 
-        [JsonPropertyName("passing_attributes")]
-        public PassingAttributes PassingAttributes { get; set; }
+        //[JsonPropertyName("passing_attributes")]
+        //public PassingAttributes PassingAttributes { get; set; }
 
-        [JsonPropertyName("dribbling_attributes")]
-        public DribblingAttributes DribblingAttributes { get; set; }
+        //[JsonPropertyName("dribbling_attributes")]
+        //public DribblingAttributes DribblingAttributes { get; set; }
 
-        [JsonPropertyName("defending_attributes")]
-        public DefendingAttributes DefendingAttributes { get; set; }
+        //[JsonPropertyName("defending_attributes")]
+        //public DefendingAttributes DefendingAttributes { get; set; }
 
-        [JsonPropertyName("physicality_attributes")]
-        public PhysicalityAttributes PhysicalityAttributes { get; set; }
+        //[JsonPropertyName("physicality_attributes")]
+        //public PhysicalityAttributes PhysicalityAttributes { get; set; }
 
-        [JsonPropertyName("goalkeeper_attributes")]
-        public GoalkeeperAttributes GoalkeeperAttributes { get; set; }
+        //[JsonPropertyName("goalkeeper_attributes")]
+        //public GoalkeeperAttributes GoalkeeperAttributes { get; set; }
     }
 
     public enum WorkRate { High, Low, Med };

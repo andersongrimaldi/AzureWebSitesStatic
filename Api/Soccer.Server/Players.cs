@@ -7,29 +7,35 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Soccer.Server.FutDb;
 
 namespace Soccer.Server
 {
-    public static class Players
+    public class Players
     {
+        private readonly IFutService futService;
+
+        public Players(IFutService futService)
+        {
+            this.futService = futService;
+        }
+
         [FunctionName("Players")]
-        public static async Task<IActionResult> Run(
+        public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            int league = int.Parse(req.Query["league"]);
+            int limit;
+            int page;
+            if (!int.TryParse(req.Query["limit"], out limit))
+                limit = 20;
+            if (!int.TryParse(req.Query["page"], out page))
+                page = 0;
 
-            string name = req.Query["name"];
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
-            return new OkObjectResult(responseMessage);
+            var players = await futService.GetPlayer(league, page, limit);
+            
+            return new OkObjectResult(players);
         }
     }
 }
