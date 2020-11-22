@@ -11,11 +11,11 @@ using Soccer.Server.FutDb;
 
 namespace Soccer.Server
 {
-    public class Players
+    public class PlayersFunction
     {
         private readonly IFutService futService;
 
-        public Players(IFutService futService)
+        public PlayersFunction(IFutService futService)
         {
             this.futService = futService;
         }
@@ -35,7 +35,7 @@ namespace Soccer.Server
 
             var players = await futService.GetPlayer(league, page, limit);
             
-            return new OkObjectResult(players);
+            return new OkObjectResult(System.Text.Json.JsonSerializer.Serialize(players));
         }
     }
 }

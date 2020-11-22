@@ -3,41 +3,26 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 
-namespace Soccer.Server.FutDb
+namespace Soccer.Shared.FutDb
 {
+    //"name": "string",
+    //"rating_min": 0,
+    //"rating_max": 0,
+    //"rating": 0,
+    //"rarity": 0,
+    //"position": "string",
+    //"club": 0,
+    //"league": 0,
+    //"nation": 0,
+    //"weak_foot": 0,
+    //"skill_moves": 0
     public class PlayersRequest
     {
         public int League { get; set; }     
-  //"name": "string",
-  //"rating_min": 0,
-  //"rating_max": 0,
-  //"rating": 0,
-  //"rarity": 0,
-  //"position": "string",
-  //"club": 0,
-  //"league": 0,
-  //"nation": 0,
-  //"weak_foot": 0,
-  //"skill_moves": 0
     }
 
-    public class Players
+    public class Players : PageFutModel
     {
-        [JsonPropertyName("count")]
-        public long Count { get; set; }
-
-        [JsonPropertyName("count_total")]
-        public long CountTotal { get; set; }
-
-        [JsonPropertyName("page")]
-        public long Page { get; set; }
-
-        [JsonPropertyName("page_total")]
-        public long PageTotal { get; set; }
-
-        [JsonPropertyName("items_per_page")]
-        public long ItemsPerPage { get; set; }
-
         [JsonPropertyName("items")]
         public List<Player> PlayerList { get; set; }
     }
@@ -115,8 +100,9 @@ namespace Soccer.Server.FutDb
         [JsonPropertyName("weak_foot")]
         public long WeakFoot { get; set; }
 
-        //[JsonPropertyName("foot")]
-        //public Foot Foot { get; set; }
+        [JsonPropertyName("foot")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public Foot Foot { get; set; }
 
         //[JsonPropertyName("attack_work_rate")]
         //public WorkRate AttackWorkRate { get; set; }

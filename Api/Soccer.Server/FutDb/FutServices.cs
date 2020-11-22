@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Microsoft.Extensions.Caching.Memory;
+using Soccer.Shared.FutDb;
 
 namespace Soccer.Server.FutDb
 {

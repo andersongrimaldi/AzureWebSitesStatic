@@ -1,0 +1,21 @@
+﻿@using Soccer.Shared.FutDb
+
+<div class="card" style="width: 18rem;">
+	<img class="card-img-top" src="data:image/png;base64,@(Convert.ToBase64String(Player.Image))" alt="@Player.Name">
+	<div class="card-body">
+		<h5 class="card-title">@Player.CommonName</h5>
+		<p class="card-text">
+			<div class="d-flex p-6"><small>Club:</small> @Player.Club</div>
+			<div class="d-flex p-6"><small>Anni:</small>@Player.Age</div>
+			<div class="d-flex p-6"><small>Nazione:</small> @Player.Nation</div>
+			<div class="d-flex p-6"><small>Compleanno:</small> @Player.BirthDate</div>
+			<div class="d-flex p-6"><small>Piede:</small>@Player.Foot</div>
+			<div class="d-flex p-6"><small>Valore:</small>@Player.Rating</div>
+		</p>
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public Player Player { get; set; }
+}

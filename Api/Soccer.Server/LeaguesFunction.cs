@@ -8,11 +8,11 @@ using Soccer.Server.FutDb;
 
 namespace Soccer.Server
 {
-    public class Leagues
+    public class LeaguesFunction
     {
 		private readonly IFutService futService;
 
-		public Leagues(IFutService futService)
+		public LeaguesFunction(IFutService futService)
 		{
 			this.futService = futService;
 		}
@@ -23,7 +23,7 @@ namespace Soccer.Server
             ILogger log)
         {
             var leagues = await futService.GetLeagues();
-            return new OkObjectResult(leagues);
+            return new OkObjectResult(System.Text.Json.JsonSerializer.Serialize(leagues));
         }
     }
 }

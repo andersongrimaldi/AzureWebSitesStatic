@@ -1,0 +1,23 @@
+﻿@page "/Players/League:int"
+@using Soccer.Shared.FutDb
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			One of three columns
+		</div>
+		<div class="col-sm">
+			One of three columns
+		</div>
+		<div class="col-sm">
+			One of three columns
+		</div>
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public int League { get; set; }
+	[Parameter]
+	public Players Players { get; set; }
+
+}
