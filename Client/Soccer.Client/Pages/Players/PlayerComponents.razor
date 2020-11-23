@@ -1,7 +1,7 @@
 ﻿@using Soccer.Shared.FutDb
 
-<div class="card" style="width: 18rem;">
-	<img class="card-img-top" src="data:image/png;base64,@(Convert.ToBase64String(Player.Image))" style="max-width:150px" alt="@Player.Name">
+<div class="@(Player.Rating < 80 ? "card bg-light card-with" : "card bg-warning card-with")">
+	<img class="card-img-top player-img-size" src="data:image/png;base64,@(Convert.ToBase64String(Player.Image))" alt="@Player.Name">
 	<div class="card-body">
 		<h5 class="card-title">@GetName()</h5>
         <p class="card-text">
@@ -13,16 +13,3 @@
         </p>
 	</div>
 </div>
-
-@code {
-    [Parameter]
-    public Player Player { get; set; }
-
-    string GetName()
-    {
-        if (!string.IsNullOrEmpty(Player.CommonName)) 
-            return Player.CommonName;
-
-        return $"{Player.FirstName} {Player.LastName}";
-    }
-}

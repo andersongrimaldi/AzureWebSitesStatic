@@ -44,14 +44,14 @@ namespace Soccer.Shared.FutDb
         [JsonPropertyName("age")]
         public long Age { get; set; }
 
-        [JsonPropertyName("resource_base_id")]
-        public long ResourceBaseId { get; set; }
+        //[JsonPropertyName("resource_base_id")]
+        //public long ResourceBaseId { get; set; }
 
-        [JsonPropertyName("fut_bin_id")]
-        public long FutBinId { get; set; }
+        //[JsonPropertyName("fut_bin_id")]
+        //public int? FutBinId { get; set; }
 
-        [JsonPropertyName("fut_wiz_id")]
-        public long FutWizId { get; set; }
+        //[JsonPropertyName("fut_wiz_id")]
+        //public int? FutWizId { get; set; }
 
         [JsonPropertyName("first_name")]
         public string FirstName { get; set; }
@@ -81,7 +81,7 @@ namespace Soccer.Shared.FutDb
         public long Club { get; set; }
 
         [JsonPropertyName("rarity")]
-        public long Rarity { get; set; }
+        public long? Rarity { get; set; }
 
         [JsonPropertyName("traits")]
         public List<object> Traits { get; set; }
@@ -111,11 +111,11 @@ namespace Soccer.Shared.FutDb
         //[JsonPropertyName("defense_work_rate")]
         //public WorkRate DefenseWorkRate { get; set; }
 
-        [JsonPropertyName("total_stats")]
-        public object TotalStats { get; set; }
+        //[JsonPropertyName("total_stats")]
+        //public object TotalStats { get; set; }
 
-        [JsonPropertyName("total_stats_in_game")]
-        public object TotalStatsInGame { get; set; }
+        //[JsonPropertyName("total_stats_in_game")]
+        //public object TotalStatsInGame { get; set; }
 
         [JsonPropertyName("rating")]
         public long Rating { get; set; }
@@ -166,123 +166,123 @@ namespace Soccer.Shared.FutDb
     public enum WorkRate { High, Low, Med };
 
     public enum Foot { Left, Right };
-    public partial class DefendingAttributes
-    {
-        [JsonPropertyName("interceptions")]
-        public long Interceptions { get; set; }
+    //public partial class DefendingAttributes
+    //{
+    //    [JsonPropertyName("interceptions")]
+    //    public long Interceptions { get; set; }
 
-        [JsonPropertyName("heading_accuracy")]
-        public long HeadingAccuracy { get; set; }
+    //    [JsonPropertyName("heading_accuracy")]
+    //    public long HeadingAccuracy { get; set; }
 
-        [JsonPropertyName("standing_tackle")]
-        public long StandingTackle { get; set; }
+    //    [JsonPropertyName("standing_tackle")]
+    //    public long StandingTackle { get; set; }
 
-        [JsonPropertyName("sliding_tackle")]
-        public long SlidingTackle { get; set; }
-    }
+    //    [JsonPropertyName("sliding_tackle")]
+    //    public long SlidingTackle { get; set; }
+    //}
 
-    public partial class DribblingAttributes
-    {
-        [JsonPropertyName("agility")]
-        public long Agility { get; set; }
+    //public partial class DribblingAttributes
+    //{
+    //    [JsonPropertyName("agility")]
+    //    public long Agility { get; set; }
 
-        [JsonPropertyName("balance")]
-        public long Balance { get; set; }
+    //    [JsonPropertyName("balance")]
+    //    public long Balance { get; set; }
 
-        [JsonPropertyName("reactions")]
-        public long Reactions { get; set; }
+    //    [JsonPropertyName("reactions")]
+    //    public long Reactions { get; set; }
 
-        [JsonPropertyName("ball_control")]
-        public long BallControl { get; set; }
+    //    [JsonPropertyName("ball_control")]
+    //    public long BallControl { get; set; }
 
-        [JsonPropertyName("dribbling")]
-        public long Dribbling { get; set; }
+    //    [JsonPropertyName("dribbling")]
+    //    public long Dribbling { get; set; }
 
-        [JsonPropertyName("composure")]
-        public long Composure { get; set; }
-    }
+    //    [JsonPropertyName("composure")]
+    //    public long Composure { get; set; }
+    //}
 
-    public partial class GoalkeeperAttributes
-    {
-        [JsonPropertyName("diving")]
-        public long Diving { get; set; }
+    //public partial class GoalkeeperAttributes
+    //{
+    //    [JsonPropertyName("diving")]
+    //    public long Diving { get; set; }
 
-        [JsonPropertyName("handling")]
-        public long Handling { get; set; }
+    //    [JsonPropertyName("handling")]
+    //    public long Handling { get; set; }
 
-        [JsonPropertyName("kicking")]
-        public long Kicking { get; set; }
+    //    [JsonPropertyName("kicking")]
+    //    public long Kicking { get; set; }
 
-        [JsonPropertyName("positioning")]
-        public long Positioning { get; set; }
+    //    [JsonPropertyName("positioning")]
+    //    public long Positioning { get; set; }
 
-        [JsonPropertyName("reflexes")]
-        public long Reflexes { get; set; }
-    }
+    //    [JsonPropertyName("reflexes")]
+    //    public long Reflexes { get; set; }
+    //}
 
-    public partial class PaceAttributes
-    {
-        [JsonPropertyName("acceleration")]
-        public long Acceleration { get; set; }
+    //public partial class PaceAttributes
+    //{
+    //    [JsonPropertyName("acceleration")]
+    //    public long Acceleration { get; set; }
 
-        [JsonPropertyName("sprint_speed")]
-        public long SprintSpeed { get; set; }
-    }
+    //    [JsonPropertyName("sprint_speed")]
+    //    public long SprintSpeed { get; set; }
+    //}
 
-    public partial class PassingAttributes
-    {
-        [JsonPropertyName("vision")]
-        public long Vision { get; set; }
+    //public partial class PassingAttributes
+    //{
+    //    [JsonPropertyName("vision")]
+    //    public long Vision { get; set; }
 
-        [JsonPropertyName("crossing")]
-        public long Crossing { get; set; }
+    //    [JsonPropertyName("crossing")]
+    //    public long Crossing { get; set; }
 
-        [JsonPropertyName("free_kick_accuracy")]
-        public long FreeKickAccuracy { get; set; }
+    //    [JsonPropertyName("free_kick_accuracy")]
+    //    public long FreeKickAccuracy { get; set; }
 
-        [JsonPropertyName("short_passing")]
-        public long ShortPassing { get; set; }
+    //    [JsonPropertyName("short_passing")]
+    //    public long ShortPassing { get; set; }
 
-        [JsonPropertyName("long_passing")]
-        public long LongPassing { get; set; }
+    //    [JsonPropertyName("long_passing")]
+    //    public long LongPassing { get; set; }
 
-        [JsonPropertyName("curve")]
-        public long Curve { get; set; }
-    }
+    //    [JsonPropertyName("curve")]
+    //    public long Curve { get; set; }
+    //}
 
-    public partial class PhysicalityAttributes
-    {
-        [JsonPropertyName("jumping")]
-        public long Jumping { get; set; }
+    //public partial class PhysicalityAttributes
+    //{
+    //    [JsonPropertyName("jumping")]
+    //    public long Jumping { get; set; }
 
-        [JsonPropertyName("stamina")]
-        public long Stamina { get; set; }
+    //    [JsonPropertyName("stamina")]
+    //    public long Stamina { get; set; }
 
-        [JsonPropertyName("strength")]
-        public long Strength { get; set; }
+    //    [JsonPropertyName("strength")]
+    //    public long Strength { get; set; }
 
-        [JsonPropertyName("aggression")]
-        public long Aggression { get; set; }
-    }
+    //    [JsonPropertyName("aggression")]
+    //    public long Aggression { get; set; }
+    //}
 
-    public partial class ShootingAttributes
-    {
-        [JsonPropertyName("positioning")]
-        public long Positioning { get; set; }
+    //public partial class ShootingAttributes
+    //{
+    //    [JsonPropertyName("positioning")]
+    //    public long Positioning { get; set; }
 
-        [JsonPropertyName("finishing")]
-        public long Finishing { get; set; }
+    //    [JsonPropertyName("finishing")]
+    //    public long Finishing { get; set; }
 
-        [JsonPropertyName("shot_power")]
-        public long ShotPower { get; set; }
+    //    [JsonPropertyName("shot_power")]
+    //    public long ShotPower { get; set; }
 
-        [JsonPropertyName("long_shots")]
-        public long LongShots { get; set; }
+    //    [JsonPropertyName("long_shots")]
+    //    public long LongShots { get; set; }
 
-        [JsonPropertyName("volleys")]
-        public long Volleys { get; set; }
+    //    [JsonPropertyName("volleys")]
+    //    public long Volleys { get; set; }
 
-        [JsonPropertyName("penalties")]
-        public long Penalties { get; set; }
-    }
+    //    [JsonPropertyName("penalties")]
+    //    public long Penalties { get; set; }
+    //}
 }

@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <PaginationComponent PaginationInfo="Current"></PaginationComponent>
+    <PaginationComponent PaginationInfo="Current" GoToPage="UpdateList"></PaginationComponent>
 }
 
 @code {
@@ -26,8 +26,16 @@
     public int LeagueId { get; set; }
     [Parameter]
     public Players Current { get; set; }
+    private int limit = 21;
+
     protected override async Task OnInitializedAsync()
     {
-        Current = await Services.GetPlayer(LeagueId);
+        Current = await Services.GetPlayer(LeagueId, limit, 0);
+    }
+
+    private async Task UpdateList(int nextPage)
+    {
+        Current = await Services.GetPlayer(LeagueId, limit, nextPage);
+        this.StateHasChanged();
     }
 }
