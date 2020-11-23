@@ -11,7 +11,7 @@ namespace Soccer.Shared.FutDb
     public partial class LeagueItem
     {
         [JsonPropertyName("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }

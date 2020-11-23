@@ -1,23 +1,33 @@
-﻿@page "/Players/League:int"
+﻿@page "/players/League:int"
+
 @using Soccer.Shared.FutDb
-<div class="container">
-	<div class="row">
-		<div class="col-sm">
-			One of three columns
-		</div>
-		<div class="col-sm">
-			One of three columns
-		</div>
-		<div class="col-sm">
-			One of three columns
-		</div>
-	</div>
-</div>
+@using Soccer.Client.Pages.Paginations;
+@using Soccer.Client.Services;
+@inject IFunctionServices Services;
+
+@if (Current != null)
+{
+    <div class="container">
+        <div class="row">
+            @for (int i = 0; i < Current.PlayerList.Count; i++)
+            {
+                <div class="col-sm">
+                    <PlayerComponents League="Current.LeagueList.ElementAt(i)"></PlayerComponents>
+                </div>
+            }
+        </div>
+    </div>
+
+    <PaginationComponent PaginationInfo="Current"></PaginationComponent>
+}
 
 @code {
-	[Parameter]
-	public int League { get; set; }
-	[Parameter]
-	public Players Players { get; set; }
-
+    [Parameter]
+    public int League { get; set; }
+    [Parameter]
+    public Players Current { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        Current = await Services.GetPlayer(League);
+    }
 }
