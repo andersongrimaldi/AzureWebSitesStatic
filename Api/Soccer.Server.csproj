@@ -2,13 +2,18 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
-    <RootNamespace>BlazorApp.Api</RootNamespace>
+    <UserSecretsId>6535698f-3241-4abf-8cbe-8d5a40a0fcb6</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.10" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
+	<PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\..\Shared\Soccer.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
