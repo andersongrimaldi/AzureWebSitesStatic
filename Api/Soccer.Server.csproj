@@ -13,7 +13,7 @@
 	<PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\Soccer.Shared.csproj" />
+    <ProjectReference Include="..\Shared\Soccer.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

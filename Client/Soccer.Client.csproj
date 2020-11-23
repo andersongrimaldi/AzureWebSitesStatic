@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\Soccer.Shared.csproj" />
+    <ProjectReference Include="..\Shared\Soccer.Shared.csproj" />
   </ItemGroup>
 
 </Project>
