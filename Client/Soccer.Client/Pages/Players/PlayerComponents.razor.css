@@ -1,8 +1,8 @@
 ﻿/*https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-5.0*/
 .card-with {
-    width: 14rem;
+    width: 16rem;
 }
 
 .player-img-size {
-    max-width: 200px;
+    max-width: 250px;
 }

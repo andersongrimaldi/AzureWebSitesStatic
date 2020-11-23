@@ -15,6 +15,8 @@ namespace Soccer.Shared
 		public static List<PageElement> GetPageElements(PageFutModel request)
 		{
 			List<PageElement> pages = new List<PageElement>();
+			pages.Clear();
+			pages.Capacity = 0;
 			int firstPage = 1;
 			// Aggiungi pagina precedente
 			if (request.Page > 1)

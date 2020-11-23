@@ -26,6 +26,7 @@
     public int LeagueId { get; set; }
     [Parameter]
     public Players Current { get; set; }
+
     private int limit = 21;
 
     protected override async Task OnInitializedAsync()
@@ -33,9 +34,13 @@
         Current = await Services.GetPlayer(LeagueId, limit, 0);
     }
 
+    //protected override Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    return base.OnAfterRenderAsync(firstRender);
+    //}
+
     private async Task UpdateList(int nextPage)
     {
         Current = await Services.GetPlayer(LeagueId, limit, nextPage);
-        this.StateHasChanged();
     }
 }
