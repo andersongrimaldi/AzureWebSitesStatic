@@ -18,6 +18,7 @@ namespace Soccer.Shared.FutDb
     //"skill_moves": 0
     public class PlayersRequest
     {
+        [JsonPropertyName("league")]
         public int League { get; set; }     
     }
 

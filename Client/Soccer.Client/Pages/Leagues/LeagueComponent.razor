@@ -2,7 +2,7 @@
 @inject NavigationManager NavigationManager
 
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="data:image/png;base64,@(Convert.ToBase64String(League.Image))" alt="@League.Name">
+    <img class="card-img-top" src="data:image/png;base64,@(Convert.ToBase64String(League.Image))" style="max-width:150px;" alt="@League.Name">
     <div class="card-body">
         <h5 class="card-title">@League.Name</h5>
         <button @onclick="NavigateToPlayer" class="btn btn-primary">Giocatori</button>

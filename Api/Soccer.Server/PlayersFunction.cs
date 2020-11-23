@@ -33,7 +33,7 @@ namespace Soccer.Server
             if (!int.TryParse(req.Query["page"], out page))
                 page = 0;
 
-            var players = await futService.GetPlayer(league, page, limit);
+            var players = await futService.GetPlayer(league, limit, page);
             
             return new OkObjectResult(System.Text.Json.JsonSerializer.Serialize(players));
         }

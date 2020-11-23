@@ -1,4 +1,4 @@
-﻿@page "/players/League:int"
+﻿@page "/players/{LeagueId:int}"
 
 @using Soccer.Shared.FutDb
 @using Soccer.Client.Pages.Paginations;
@@ -12,7 +12,7 @@
             @for (int i = 0; i < Current.PlayerList.Count; i++)
             {
                 <div class="col-sm">
-                    <PlayerComponents League="Current.LeagueList.ElementAt(i)"></PlayerComponents>
+                    <PlayerComponents Player="Current.PlayerList.ElementAt(i)"></PlayerComponents>
                 </div>
             }
         </div>
@@ -23,11 +23,11 @@
 
 @code {
     [Parameter]
-    public int League { get; set; }
+    public int LeagueId { get; set; }
     [Parameter]
     public Players Current { get; set; }
     protected override async Task OnInitializedAsync()
     {
-        Current = await Services.GetPlayer(League);
+        Current = await Services.GetPlayer(LeagueId);
     }
 }

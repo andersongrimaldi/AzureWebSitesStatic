@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using Microsoft.Extensions.Caching.Memory;
 using Soccer.Shared.FutDb;
+using System.Net.Http.Formatting;
 
 namespace Soccer.Server.FutDb
 {
@@ -39,12 +40,13 @@ namespace Soccer.Server.FutDb
 		public async Task<Players> GetPlayer(int league, int limit = 20, int page = 0)
 		{
 			Players players;
-			string playerListCacheKey = $"Player-{league}-limit{20}-page{page}";
+			string playerListCacheKey = $"Player[{league}]-limit[{limit}]-page[{page}]";
 			if (memoryCache.TryGetValue(playerListCacheKey, out players))
 				return players;
 
 			var leagueFilter = new PlayersRequest { League = league };
-			var playersMessages = await client.PostAsJsonAsync<PlayersRequest>($"/api/players?page={page}&limit={limit}", leagueFilter);
+			var playersMessages = await client.PostAsync($"/api/players?page={page}&limit={limit}", new StringContent(JsonSerializer.Serialize(leagueFilter)));
+			//var playersMessages = await client.PostAsync<PlayersRequest>($"/api/players?page={page}&limit={limit}", leagueFilter, new JsonMediaTypeFormatter());
 			if (!playersMessages.IsSuccessStatusCode)
 				throw new InvalidOperationException(await playersMessages.Content.ReadAsStringAsync());
 			else
@@ -55,7 +57,7 @@ namespace Soccer.Server.FutDb
 				foreach (var l in players.PlayerList)
 				{
 					byte[] image;
-					string playerId = $"Player-{l.Id}";
+					string playerId = $"Player[{l.Id}]";
 					if (!memoryCache.TryGetValue(playerId, out image))
 					{
 						image = await client.GetByteArrayAsync($"/api/players/{l.Id}/image");
