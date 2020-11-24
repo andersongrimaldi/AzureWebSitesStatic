@@ -30,8 +30,8 @@ jobs:
       #  uses: actions/setup-dotnet@v1
       #  with:
       #    dotnet-version: '3.1.x'
-      - name: Build Blazor App
-        run: dotnet publish ./Api/Soccer.Server.csproj-c Release -o api -f netcoreapp 3.1
+      - name: Build Function App
+        run: dotnet publish ./Api/Soccer.Server.csproj -c Release -o api -f netcoreapp 3.1
       #- name: Build App
       #  run: dotnet publish -c Release -o functions
       - name: Build And Deploy
