@@ -26,10 +26,10 @@ jobs:
           dotnet-version: '5.0.x'
       - name: Build Blazor App
         run: dotnet publish ./Client/Soccer.Client.csproj -c Release -o blazor -f NET5.0
-      #- name: Scaricare .NET 3
-      #  uses: actions/setup-dotnet@v1
-      #  with:
-      #    dotnet-version: '3.1.x'
+      - name: Scaricare .NET 3
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.x'
       - name: Build Function App
         run: dotnet publish ./Api/Soccer.Server.csproj -c Release -o func -f netcoreapp3.1
       #- name: Build App
