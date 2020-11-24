@@ -31,7 +31,7 @@ jobs:
       #  with:
       #    dotnet-version: '3.1.x'
       - name: Build Function App
-        run: dotnet publish ./Api/Soccer.Server.csproj -c Release -o api -f netcoreapp 3.1
+        run: dotnet publish ./Api/Soccer.Server.csproj -c Release -o api -f netcoreapp3.1
       #- name: Build App
       #  run: dotnet publish -c Release -o functions
       - name: Build And Deploy
