@@ -31,7 +31,7 @@ jobs:
       #  with:
       #    dotnet-version: '3.1.x'
       - name: Build Function App
-        run: dotnet publish ./Api/Soccer.Server.csproj -c Release -o api -f netcoreapp3.1
+        run: dotnet publish ./Api/Soccer.Server.csproj -c Release -o func -f netcoreapp3.1
       #- name: Build App
       #  run: dotnet publish -c Release -o functions
       - name: Build And Deploy
@@ -48,7 +48,7 @@ jobs:
           #output_location: "wwwroot" # Built app content directory - optional
           
           app_location: 'blazor/wwwroot' # App source code path
-          api_location: 'api' # Api source code path - optional
+          api_location: 'func' # Api source code path - optional
           app_artifact_location: 'blazor' # Built app content directory - optional:  
           ###### End of Repository/Build Configurations ######
 
