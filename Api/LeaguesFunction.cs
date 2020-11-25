@@ -22,6 +22,7 @@ namespace Soccer.Server
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Leagues")] HttpRequest req,
             ILogger log)
         {
+            log.LogInformation("Functions Leagues Start");
             var leagues = await futService.GetLeagues();
             return new OkObjectResult(System.Text.Json.JsonSerializer.Serialize(leagues));
         }

@@ -25,6 +25,7 @@ namespace Soccer.Server
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
+            log.LogInformation("Functions Players Start");
             int league = int.Parse(req.Query["league"]);
             int limit;
             int page;
