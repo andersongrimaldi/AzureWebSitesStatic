@@ -12,6 +12,13 @@
 
     protected override async Task OnInitializedAsync()
     {
-        FunctionCallString = await Client.GetStringAsync("/reader");
+        try
+        {
+            FunctionCallString = await Client.GetStringAsync("/reader");
+        }
+        catch (Exception)
+        {
+            FunctionCallString = "Non autorizzato";
+        }
     }
 }

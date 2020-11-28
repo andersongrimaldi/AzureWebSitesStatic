@@ -12,6 +12,13 @@
 
     protected override async Task OnInitializedAsync()
     {
-        FunctionCallString = await Client.GetStringAsync("/anonymous");
+        try
+        {
+            FunctionCallString = await Client.GetStringAsync("/anonymous");
+        }
+        catch (Exception )
+        {
+            FunctionCallString = "Non autorizzato";
+        }
     }
 }
