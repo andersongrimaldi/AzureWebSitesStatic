@@ -1,0 +1,17 @@
+﻿@page "/profile"
+<h3>Profile</h3>
+
+@(MyProfile.ToString())
+
+@code 
+{ 
+    [Parameter]
+    [Inject]
+    public HttpClient Client { get; set; }
+    public string MyProfile { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        MyProfile = await Client.GetStringAsync("/.auth/me");
+    }
+}

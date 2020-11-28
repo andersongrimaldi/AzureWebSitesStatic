@@ -14,6 +14,11 @@
 			"post_login_redirect_uri": "/posttwitterlogin"
 		},
 		{
+			"route": "/logingithub",
+			"serve": "/.auth/login/github",
+			"post_login_redirect_uri": "/posttwitterlogin"
+		},
+		{
 			"route": "/logout",
 			"serve": "/.auth/logout"
 		},
