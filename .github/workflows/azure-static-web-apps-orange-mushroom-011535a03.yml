@@ -48,7 +48,7 @@ jobs:
           #output_location: "wwwroot" # Built app content directory - optional
           
           app_location: 'blazor/wwwroot' # App source code path
-          api_location: 'func' # Api source code path - optional
+          api_location: 'Api' # Api source code path - optional
           app_artifact_location: 'blazor' # Built app content directory - optional:  
           ###### End of Repository/Build Configurations ######
 
