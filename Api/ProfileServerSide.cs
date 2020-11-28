@@ -20,11 +20,12 @@ namespace Soccer.Server
             ILogger log)
         {
             var principal = UserHelpers.UserHelper.Parse(req);
-
-            return new OkObjectResult(new { 
-                Name = principal.Identity.Name,
-                UserDetails = principal.Claims.FirstOrDefault(t => t.Type == ClaimTypes.Name)
-            });
+            if(principal.Identity != null)
+                return new OkObjectResult(new { 
+                    Name = principal.Identity.Name,
+                    UserDetails = principal.Claims.FirstOrDefault(t => t.Type == ClaimTypes.Name)
+                });
+            return new OkObjectResult(new { Name = "Non autenticato" });
         }
     }
 }
