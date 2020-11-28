@@ -24,7 +24,7 @@
 		},
 		{
 			"route": "/reader",
-			"allowedRoles": [ "reader" ]
+			"allowedRoles": [ "reader", "authenticated" ]
 		},
 		{
 			"route": "/anonymous",
@@ -32,7 +32,11 @@
 		},
 		{
 			"route": "/superheroes",
-			"allowedRoles": [ "superheroes", "authenticated" ]
+			"allowedRoles": [ "superheroes" ]
+		},
+		{
+			"route": "/superheroesgithub",
+			"allowedRoles": [ "superheroesgithub" ]
 		},
 		{
 			"route": "/leagues",
