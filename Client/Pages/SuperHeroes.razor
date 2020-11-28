@@ -1,6 +1,16 @@
 ﻿@page "/superheroes"
 <h3>SuperHeroes</h3>
 
-@code {
+@(FunctionCallString)
 
+@code
+{
+    [Inject]
+    public HttpClient Client { get; set; }
+    public string FunctionCallString { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        FunctionCallString = await Client.GetStringAsync("/superheroes");
+    }
 }
