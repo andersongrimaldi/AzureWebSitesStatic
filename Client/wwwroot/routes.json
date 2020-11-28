@@ -1,5 +1,34 @@
 {
 	"routes": [
+		//{
+		//	"route": "/.auth/login/github",
+		//	"statusCode": "404"
+		//},
+		//{
+		//	"route": "/.auth/login/twitter",
+		//	"statusCode": "404"
+		//},
+		{
+			"route": "/login",
+			"serve": "/.auth/login/twitter",
+			"post_login_redirect_uri": "/posttwitterlogin"
+		},
+		{
+			"route": "/logout",
+			"serve": "/.auth/logout"
+		},
+		{
+			"route": "/reader",
+			"allowedRoles": [ "reader", "anonymous" ]
+		},
+		{
+			"route": "/anonymous",
+			"allowedRoles": [ "anonymous" ]
+		},
+		{
+			"route": "/superheroes",
+			"allowedRoles": [ "superheroes", "authenticated" ]
+		},
 		{
 			"route": "/*",
 			"serve": "/index.html",
