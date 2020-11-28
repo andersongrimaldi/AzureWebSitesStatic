@@ -22,8 +22,7 @@ namespace Soccer.Server
             var principal = UserHelpers.UserHelper.Parse(req);
             if(principal.Identity != null)
                 return new OkObjectResult(new { 
-                    Name = principal.Identity.Name,
-                    UserDetails = principal.Claims.FirstOrDefault(t => t.Type == ClaimTypes.Name)
+                    Name = principal.Identity.Name
                 });
             return new OkObjectResult(new { Name = "Non autenticato" });
         }
