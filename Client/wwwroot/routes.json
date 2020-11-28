@@ -35,7 +35,12 @@
 			"allowedRoles": [ "superheroes", "authenticated" ]
 		},
 		{
-			"route": "/*",
+			"route": "/leagues",
+			"serve": "/index.html",
+			"statusCode": 200
+		},
+		{
+			"route": "/players/*",
 			"serve": "/index.html",
 			"statusCode": 200
 		}
