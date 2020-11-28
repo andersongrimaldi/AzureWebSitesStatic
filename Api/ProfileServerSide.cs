@@ -7,6 +7,8 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System.Linq;
+using System.Security.Claims;
 
 namespace Soccer.Server
 {
@@ -19,7 +21,10 @@ namespace Soccer.Server
         {
             var principal = UserHelpers.UserHelper.Parse(req);
 
-            return new OkObjectResult(principal.Identity.Name);
+            return new OkObjectResult(new { 
+                Name = principal.Identity.Name,
+                UserDetails = principal.Claims.FirstOrDefault(t => t.Type == ClaimTypes.Name)
+            });
         }
     }
 }
