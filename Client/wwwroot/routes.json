@@ -15,19 +15,19 @@
 			"serve": "/.auth/logout"
 		},
 		{
-			"route": "/reader",
+			"route": "/api/reader",
 			"allowedRoles": [ "reader", "authenticated" ]
 		},
 		{
-			"route": "/anonymous",
+			"route": "/api/anonymous",
 			"allowedRoles": [ "anonymous" ]
 		},
 		{
-			"route": "/superheroes",
+			"route": "/api/superheroes",
 			"allowedRoles": [ "superheroes" ]
 		},
 		{
-			"route": "/superheroesgithub",
+			"route": "/api/superheroesgithub",
 			"allowedRoles": [ "superheroesgithub" ]
 		},
 		{
