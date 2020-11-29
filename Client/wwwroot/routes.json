@@ -45,7 +45,7 @@
 		{
 			"errorType": "NotFound",
 			"statusCode": "302",
-			"route": "/api/notfoundapi"
+			"route": "/notfoundapi"
 		}
 	//,
 	//	{
