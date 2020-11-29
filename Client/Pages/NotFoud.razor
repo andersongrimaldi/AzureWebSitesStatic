@@ -1,0 +1,23 @@
+﻿@page "/notfound"
+<h3>NotFound</h3>
+
+@(FunctionCallString)
+
+@code
+{
+        [Inject]
+        public HttpClient Client { get; set; }
+    public string FunctionCallString { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        //try
+        //{
+        FunctionCallString = await Client.GetStringAsync("/api/notfound");
+        //}
+        //catch (Exception ex)
+        //{
+        //    FunctionCallString = "Non autorizzato";
+        //}
+    }
+}

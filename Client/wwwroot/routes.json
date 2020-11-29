@@ -45,12 +45,13 @@
 		{
 			"errorType": "NotFound",
 			"statusCode": "302",
-			"route": "/notfoundpage"
-		},
-		{
-			"errorType": "Unauthenticated",
-			"statusCode": "302",
-			"serve": "/login"
+			"route": "/api/notfoundapi"
 		}
+	//,
+	//	{
+	//		"errorType": "Unauthenticated",
+	//		"statusCode": "302",
+	//		"serve": "/login"
+	//	}
 	]
 }

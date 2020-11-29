@@ -15,7 +15,7 @@
         {
             FunctionCallString = await Client.GetStringAsync("/api/superheroes");
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             FunctionCallString = "Non autorizzato";
         }
