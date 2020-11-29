@@ -40,5 +40,16 @@
 			"serve": "/index.html",
 			"statusCode": 200
 		}
+	],
+	"platformErrorOverrides": [
+		{
+			"errorType": "NotFound",
+			"route": "/notfoundpage"
+		},
+		{
+			"errorType": "Unauthenticated",
+			"statusCode": "302",
+			"serve": "/login"
+		}
 	]
 }
