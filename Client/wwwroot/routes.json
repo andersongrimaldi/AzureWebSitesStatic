@@ -47,11 +47,11 @@
 			"statusCode": "302",
 			"route": "/notfoundapi"
 		}
-	//,
-	//	{
-	//		"errorType": "Unauthenticated",
-	//		"statusCode": "302",
-	//		"serve": "/login"
-	//	}
+	,
+		{
+			"errorType": "Unauthenticated",
+			"statusCode": "302",
+			"serve": "/login"
+		}
 	]
 }
