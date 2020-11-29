@@ -44,6 +44,7 @@
 	"platformErrorOverrides": [
 		{
 			"errorType": "NotFound",
+			"statusCode": "302",
 			"route": "/notfoundpage"
 		},
 		{
