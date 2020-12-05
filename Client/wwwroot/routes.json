@@ -44,12 +44,7 @@
 	"platformErrorOverrides": [
 		{
 			"errorType": "NotFound",
-			"statusCode": "302",
-			"serve": "/errors.html"
-		},
-		{
-			"errorType": "Unauthenticated",
-			"statusCode": "302",
+			"statusCode": "404",
 			"serve": "/errors.html"
 		}
 	]
